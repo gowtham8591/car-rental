@@ -1,0 +1,124 @@
+/***********************************************************
+* Create the database named contactdb and all of its tables
+************************************************************/
+
+DROP DATABASE IF EXISTS contactdb;
+
+CREATE DATABASE contactdb;
+
+USE contactdb;
+
+CREATE TABLE rent_car (
+  rentid INT NOT NULL AUTO_INCREMENT,
+  size VARCHAR(50),
+  city VARCHAR(50),
+  ndays int,
+stdate date,
+endate date
+
+ 
+  PRIMARY KEY(rentid) 
+);
+
+
+INSERT INTO User 
+  (FirstName, LastName, EmailAddress)
+VALUES 
+  ('john', 'Buck', 'john@gmail.com'),
+  ('Mary', 'Henderson', 'mary@npu.edu'), 
+  ('deny', 'Lee', 'deny@yahoo.com');
+
+available cars for a given date and location
+
+SELECT CAR_TYPE.NAME, CAR_TYPE.TYPE, CAR.BASE_PRICE_PER_DAY,
+FROM CAR
+JOIN CAR_TYPE ON CAR_TYPE.ID = CAR.CAR_TYPE_ID
+WHERE CAR.ID NOT IN
+(SELECT BOOKING.CAR_ID FROM BOOKING WHERE BOOKING.BOOKING_DATE <= '2002-
+02-01' AND BOOKING.RETURN_DATE >= '2002-02-30')
+
+ID NAME PRODUCER TYPE AUTOMATIC
+
+INSERT 
+
+NAME TYPE BASE_PRICE_PER_DAy
+
+
+VALUES
+('mk',$29.99);
+
+
+
+List all current bookings for a given customer
+
+SELECT BOOKING.BOOKING_NUMBER, BOOKING.BOOKING_DATE,
+BOOKING.RETURN_DATE, 
+CAR_TYPE.NAME
+FROM BOOKING
+JOIN CAR ON CAR.ID = BOOKING.CAR_ID
+JOIN CAR_TYPE ON CAR_TYPE.ID = CAR.CAR_TYPE_ID
+WHERE BOOKING.CUSTOMER_ID = '1'
+ BOOKING_DATE RETURN_DATE NAME ;
+
+INSERT VALUES
+
+(BOOKING_DATE RETURN_DATE NAME )
+(01.01.02 01.02.02 )
+(03.02.00 03.03.02);
+Retrieve details for a given customer
+
+SELECT * FROM CUSTOMER WHERE CUSTOMER.ID = 1
+ 
+
+CUSTOMER_TYPE COMPANY_NAME;
+
+INSERT VALUES
+
+(PRIVATE, RENTAL CAR COMPANY);
+
+
+List all addresses for a given customer
+
+
+SELECT CUSTOMER.FIRST_NAME, CUSTOMER.SURNAME,
+CUSTOMER_ADDRESS.STREET_NAME, CUSTOMER_ADDRESS.STREET_NUMBER
+FROM CUSTOMER
+JOIN CUSTOMER_ADDRESS ON CUSTOMER_ADDRESS.CUSTOMER_ID = CUSTOMER.ID
+WHERE CUSTOMER.ID = 1;
+
+INSERT 
+(FIRST_NAME SURNAME STREET_NAME STREET_NUMBER)
+
+VALUES
+
+(manikumar fremont 94538);
+
+
+List all car types
+
+SELECT CAR_SIZE.NAME,
+FROM CAR_SIZE;
+
+INSERT 
+ (NAME CAR_SIZE)
+VALUES
+(audi MID-SIZE);
+(audi COMPACT);
+(audi LUXURY);
+  
+
+List all bookings for a given date and branch
+
+
+SELECT CUSTOMER.FIRST_NAME, CUSTOMER.SURNAME,
+CUSTOMER.EMAIL, BOOKING.BOOKING_DATE, BOOKING.RETURN_DATE
+FROM BOOKING
+JOIN CUSTOMER ON BOOKING.CUSTOMER_ID = CUSTOMER.ID
+
+WHERE CUSTOMER.ID = 1 AND BOOKING.BOOKING_DATE = '2002-01-01';
+
+INSERT 
+(FIRST_NAME SURNAME EMAIL BOOKING_DATE RETURN_DATE)
+VALUES
+(Manikumar veeravally kumarmani579@gmail.com 5.5.2015 5.8.2015 );
+ 
